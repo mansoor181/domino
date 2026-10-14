@@ -1,0 +1,18 @@
+# continues the random-order module on maskgit's own reveal sets: guided candidates at the
+# released temperatures, kept by confidence with gumbel noise, at 2 to 8 steps. the labels are the
+# true classes with a tenth replaced by the null class, so one module serves both passes of guidance.
+base: imagenet256_random.yaml
+out_dir: ${DOMINO_RESULTS}/domino/imagenet256_confidence
+init_module: ${DOMINO_RESULTS}/domino/imagenet256_random/module_0012000.pt
+reveal: confidence
+reveal_K: [2, 3, 4, 6, 8]
+reveal_r_temp: 4.5
+reveal_sm_temp: 1.0
+class_cond: true
+label_drop: 0.1
+batch_size: 128
+micro_batch_size: 128
+steps: 6000
+lr: 5.0e-4
+warmup_steps: 200
+ckpt_every: 1000

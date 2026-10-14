@@ -1,0 +1,6 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/sdtt/zinc250k
+teacher: ${DOMINO_RESULTS}/mdlm/zinc250k/ckpt_0100000.pt
+dataset: zinc250k
+batch_size: 512
+micro_batch_size: 512

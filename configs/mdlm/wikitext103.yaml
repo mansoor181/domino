@@ -1,0 +1,4 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/mdlm/wikitext103
+dataset: wikitext103
+steps: 200000

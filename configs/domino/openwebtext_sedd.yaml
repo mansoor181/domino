@@ -1,0 +1,8 @@
+# 64 rows of 1024 tokens are the 65k tokens per step of the other text modules
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/domino/openwebtext_sedd
+dataset: openwebtext
+denoiser: {kind: sedd, path: louaaron/sedd-small}
+batch_size: 64
+micro_batch_size: 32
+val_rows: 128

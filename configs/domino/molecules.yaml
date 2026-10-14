@@ -1,0 +1,8 @@
+# the molecule strings are short, so the batch fits at once, the gap table covers fewer gaps, and the
+# smallest step size is larger
+base: base.yaml
+micro_batch_size: 512
+h_min: 0.0625
+val_rows: 512
+module:
+  max_gap: 16

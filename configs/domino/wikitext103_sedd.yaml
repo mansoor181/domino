@@ -1,0 +1,4 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/domino/wikitext103_sedd
+dataset: wikitext103
+denoiser: {kind: sedd, path: "${DOMINO_RESULTS}/sedd/wikitext103"}

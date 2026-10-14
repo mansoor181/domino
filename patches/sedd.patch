@@ -1,0 +1,38 @@
+--- a/data.py
++++ b/data.py
+@@ -1,3 +1,4 @@
++import os
+ import re
+ from transformers import GPT2TokenizerFast
+ from datasets import load_dataset
+@@ -116,7 +117,18 @@
+     return dataset
+ 
+ 
++def get_mol_dataset(name, mode):
++    """qm9 and zinc-250k as preprocessed by pairflow, read from $DOMINO_MOL_ROOT. the rows are
++    fixed-length token tensors, so there is nothing to tokenize or wrap."""
++    sub = {"qm9": "qm9", "zinc250k": "zinc-250k"}[name]
++    split = "train" if mode == "train" else "valid"
++    blob = torch.load(os.path.join(os.environ["DOMINO_MOL_ROOT"], sub, "parsed", f"{split}.pt"))
++    return Dataset.from_dict({"input_ids": blob["x_clean"].long().tolist()}).with_format("torch")
++
++
+ def get_dataset(name, mode, cache_dir=None, block_size=1024, num_proc=8):
++    if name in ("qm9", "zinc250k"):
++        return get_mol_dataset(name, mode)
+     if name == "wikitext103":
+         dataset = load_dataset("wikitext", name="wikitext-103-raw-v1", cache_dir=cache_dir)
+     elif name == "wikitext2":
+@@ -125,6 +137,11 @@
+         dataset = load_dataset("ptb_text_only", cache_dir=cache_dir)
+     elif name == "lambada":
+         dataset = get_lambada_test_dataset()
++    elif name == "lm1b":
++        # the lm1b loading script no longer runs under datasets 4, so we read its parquet mirror,
++        # which has a train and a test split
++        dataset = load_dataset("jdeschena/lm1b", cache_dir=cache_dir)
++        mode = "test" if mode == "validation" else mode
+     else:
+         dataset = load_dataset(name, cache_dir=cache_dir)
+ 

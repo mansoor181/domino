@@ -1,0 +1,16 @@
+--- a/dataloader.py
++++ b/dataloader.py
+@@ -370,6 +370,13 @@
+       'ag_news',
+       cache_dir=cache_dir,
+       streaming=streaming)
++  elif dataset_name == 'lm1b':
++    # the lm1b loading script no longer runs under datasets 4, so we
++    # read its parquet mirror, which has a train and a test split
++    dataset = datasets.load_dataset(
++      'jdeschena/lm1b',
++      cache_dir=cache_dir,
++      streaming=streaming)
+   else:
+     dataset = datasets.load_dataset(
+       dataset_name,

@@ -1,0 +1,11 @@
+# maskgit with the null class, trained on random reveal sets as for text
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/domino/imagenet256_random
+dataset: imagenet256
+denoiser: {kind: maskgit, path: "${DOMINO_IMAGE_ROOT}/maskgit/MaskGIT_ImageNet_256.pth"}
+batch_size: 256
+micro_batch_size: 128
+steps: 12000
+module:
+  # on the 16 x 16 grid the signed gap fixes the displacement, so the table covers every gap
+  max_gap: 255

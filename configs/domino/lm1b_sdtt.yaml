@@ -1,0 +1,4 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/domino/lm1b_sdtt
+dataset: lm1b
+denoiser: {kind: mdlm, path: "${DOMINO_RESULTS}/sdtt/lm1b/student_final.pt"}

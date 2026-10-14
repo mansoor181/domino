@@ -1,0 +1,4 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/domino/wikitext103_sdtt
+dataset: wikitext103
+denoiser: {kind: mdlm, path: "${DOMINO_RESULTS}/sdtt/wikitext103/student_final.pt"}

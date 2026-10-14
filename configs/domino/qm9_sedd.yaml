@@ -1,0 +1,4 @@
+base: molecules.yaml
+out_dir: ${DOMINO_RESULTS}/domino/qm9_sedd
+dataset: qm9
+denoiser: {kind: sedd, path: "${DOMINO_RESULTS}/sedd/qm9"}

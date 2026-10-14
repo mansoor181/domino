@@ -1,0 +1,4 @@
+base: molecules.yaml
+out_dir: ${DOMINO_RESULTS}/domino/qm9_mdlm
+dataset: qm9
+denoiser: {kind: mdlm, path: "${DOMINO_RESULTS}/mdlm/qm9/ckpt_0050000.pt"}

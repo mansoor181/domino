@@ -1,0 +1,25 @@
+# mdlm's diffusion transformer and training recipe, shared by every corpus
+seed: 0
+batch_size: 512
+micro_batch_size: 256
+num_workers: 4
+lr: 3.0e-4
+wd: 0.0
+betas: [0.9, 0.999]
+warmup_steps: 2500
+ema: 0.9999
+log_every: 500
+val_every: 5000
+ckpt_every: 5000
+keep_last_ckpts: 1
+model:
+  dim: 768
+  depth: 12
+  heads: 12
+  mlp_mult: 4
+  cond_dim: 128
+  time_embed_dim: 256
+  dropout: 0.1
+  eps: 1.0e-3
+  # a learned offset on the conditioning of the last four blocks, as in the models of the paper
+  offset_blocks: 4

@@ -1,0 +1,25 @@
+# the domino module and its training recipe, shared by every experiment
+seed: 0
+batch_size: 512
+micro_batch_size: 256
+num_workers: 4
+steps: 25000
+lr: 1.0e-3
+wd: 0.0
+betas: [0.9, 0.999]
+warmup_steps: 500
+ema: 0.999
+# the loss of the paper: K = 4 steps with eta = 1/2, and random step sizes down to h_min
+K: 4
+eta: 0.5
+h_min: 0.03125
+log_every: 50
+val_every: 1000
+val_rows: 256
+ckpt_every: 2000
+keep_last_ckpts: 2
+module:
+  rank: 128
+  gap_dim: 16
+  max_gap: 32
+  hidden: 256

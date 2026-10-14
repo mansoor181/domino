@@ -1,0 +1,5 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/mdlm/qm9
+dataset: qm9
+micro_batch_size: 512
+steps: 50000

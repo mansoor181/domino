@@ -1,0 +1,4 @@
+base: molecules.yaml
+out_dir: ${DOMINO_RESULTS}/domino/zinc250k_mdlm
+dataset: zinc250k
+denoiser: {kind: mdlm, path: "${DOMINO_RESULTS}/mdlm/zinc250k/ckpt_0100000.pt"}

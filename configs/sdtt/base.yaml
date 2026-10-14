@@ -1,0 +1,12 @@
+# sdtt's released recipe: kl(student || teacher), two teacher steps per student step, and the step
+# size doubling every 10k updates from 1/1024 of the time axis until the student takes 8 steps
+seed: 0
+num_workers: 4
+lr: 3.0e-5
+warmup_steps: 2500
+ema: 0.9999
+sampling_eps: 1.0e-5
+num_distill_steps: 2
+orig_num_sampling_steps: 1024
+min_num_sampling_steps: 8
+grow_dt_every: 10000

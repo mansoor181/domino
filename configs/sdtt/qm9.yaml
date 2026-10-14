@@ -1,0 +1,6 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/sdtt/qm9
+teacher: ${DOMINO_RESULTS}/mdlm/qm9/ckpt_0050000.pt
+dataset: qm9
+batch_size: 512
+micro_batch_size: 512

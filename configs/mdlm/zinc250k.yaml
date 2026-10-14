@@ -1,0 +1,4 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/mdlm/zinc250k
+dataset: zinc250k
+steps: 100000

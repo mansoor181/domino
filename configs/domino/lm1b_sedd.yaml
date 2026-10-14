@@ -1,0 +1,5 @@
+# sedd reads lm1b in its own gpt-2 tokenization (scripts/prep_text.py --corpus lm1b_gpt2)
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/domino/lm1b_sedd
+dataset: lm1b_gpt2
+denoiser: {kind: sedd, path: "${DOMINO_RESULTS}/sedd/lm1b"}

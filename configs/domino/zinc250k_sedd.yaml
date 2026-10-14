@@ -1,0 +1,4 @@
+base: molecules.yaml
+out_dir: ${DOMINO_RESULTS}/domino/zinc250k_sedd
+dataset: zinc250k
+denoiser: {kind: sedd, path: "${DOMINO_RESULTS}/sedd/zinc250k"}

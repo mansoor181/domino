@@ -1,0 +1,4 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/mdlm/lm1b
+dataset: lm1b
+steps: 200000

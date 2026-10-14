@@ -1,0 +1,6 @@
+base: base.yaml
+out_dir: ${DOMINO_RESULTS}/sdtt/wikitext103
+teacher: ${DOMINO_RESULTS}/mdlm/wikitext103/ckpt_0200000.pt
+dataset: wikitext103
+batch_size: 128
+micro_batch_size: 128
